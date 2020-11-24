@@ -10,6 +10,9 @@ public class Problem10 {
     /* Prohibited points are (P/2 + 2Pn) and (-P/2 + 2Pn) but we'll never never meet them exactly in our function*/
 
     public void calculateFunction(double lowerX, double topX, double step) {
+        if (lowerX >= topX || step <= 0)
+            throw new IllegalArgumentException("Passing Incorrect parameters");
+
         int valuesNumber = (int) ((topX - lowerX) / step + 1);
 
         double[] argumentValues = new double[valuesNumber];
