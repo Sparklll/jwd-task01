@@ -16,10 +16,16 @@ class Problem8Test {
     }
 
     @Test
+    void functionValue_InvalidNaNArgument_IllegalArgumentExceptionThrown() {
+        assertThrows(IllegalArgumentException.class, () -> problemInstance.functionValue(Double.NaN));
+    }
+
+    @Test
     void functionValue_ArgumentOutOfFunctionDomain_IllegalArgumentExceptionThrown() {
         double forbiddenFunctionArgument = Math.pow(6, 1.0 / 3);
         assertThrows(IllegalArgumentException.class, () -> problemInstance.functionValue(forbiddenFunctionArgument));
     }
+
     @Test
     void functionValue_ArgumentIsGreaterThan3() {
         double expected = -61;

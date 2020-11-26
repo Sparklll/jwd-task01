@@ -6,8 +6,8 @@ public class Problem3 {
     Найти площадь квадрата, вписанного в эту окружность. */
 
     public double areaOfSquareInscribedInCircleInscribedInSquare(double circumscribedSquareArea) {
-        if(circumscribedSquareArea <= 0)
-            throw new IllegalArgumentException("The area of circumscribed figure cannot be less/is equal 0");
+        if(circumscribedSquareArea <= 0 || !Double.isFinite(circumscribedSquareArea))
+            throw new IllegalArgumentException("Invalid argument value");
 
         double circumscribedSquareSide = Math.sqrt(circumscribedSquareArea);
         double inscribedCircleRadius = circumscribedSquareSide / 2;

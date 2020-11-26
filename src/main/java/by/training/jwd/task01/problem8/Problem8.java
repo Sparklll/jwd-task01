@@ -5,6 +5,9 @@ public class Problem8 {
     /* Вычислить значение функции: F(x) = {-x^2+3x+9, x >= 3; 1/(x^3-6), x < 3} */
 
     public double functionValue(double x) {
+        if(!Double.isFinite(x))
+            throw new IllegalArgumentException("Invalid argument value");
+
         double prohibitedArgument = Math.pow(6, 1.0/3);
         if(x == prohibitedArgument)
             throw new IllegalArgumentException("This argument value is outside the scope of the function domain");

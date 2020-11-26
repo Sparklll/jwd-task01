@@ -15,9 +15,15 @@ class Problem3Test {
     }
 
     @Test
-    void areaOfSquareInscribedInCircleInscribedInSquare_InvalidSquareValue_IllegalArgumentExceptionThrown() {
+    void areaOfSquareInscribedInCircleInscribedInSquare_InvalidFiniteSquareValue_IllegalArgumentExceptionThrown() {
         assertThrows(IllegalArgumentException.class,
                 () -> problemInstance.areaOfSquareInscribedInCircleInscribedInSquare(-5));
+    }
+
+    @Test
+    void areaOfSquareInscribedInCircleInscribedInSquare_InvalidNaNSquareValue_IllegalArgumentExceptionThrown() {
+        assertThrows(IllegalArgumentException.class,
+                () -> problemInstance.areaOfSquareInscribedInCircleInscribedInSquare(Double.NaN));
     }
 
     @Test
